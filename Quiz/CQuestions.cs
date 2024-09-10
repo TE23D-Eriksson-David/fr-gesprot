@@ -6,7 +6,7 @@ namespace MQuiz{
 public class CQuestions
 {
 
-
+string question;
 
 
 
@@ -18,46 +18,46 @@ SC.WriteLine("Answer");
 string Answer = SC.ReadLine();
 
 SC.WriteLine("PromptAnswer");
-int Points;
+
     switch ((string)(Answer)) {
     case (string)"1": {
         SC.WriteLine("Stanley Kubrick");
-        Points =+ 50;
+        
     break;    }
 
     case (string)"2": {
         SC.WriteLine("Top Gun");
-        Points =+ 100;
+        
     break;    }
 
     case (string)"3": {
         SC.WriteLine("Springfield");
-        Points =+ 150;
+        
     break;    }
     
     case (string)"4": {
         SC.WriteLine("Victoriasjön");
-        Points =+ 50;
+        
     break;    }
     case (string)"5": {
         SC.WriteLine("Vatikanstaten");
-        Points =+ 100;
+        
     break;    }
     case (string)"6": {
         SC.WriteLine("Canberra");
-        Points =+ 150;
+        
     break;    }
     case (string)"7": {
         SC.WriteLine("John Lennon");
-        Points =+ 50;
+        
     break;    }
     case (string)"8": {
         SC.WriteLine("Irland");
-        Points =+ 100;
+        
     break;    }
     case (string)"9": {
         SC.WriteLine("1977");
-        Points =+ 150;
+        
     break;    }
     
 }
@@ -67,15 +67,15 @@ int Points;
 public void ChosingQuestion() {   
 
 SC.WriteLine("ChosingQuestion");
-string question = Console.ReadLine();
+question = Console.ReadLine();
 
-                                        }
+ }
 
 
 
 public void PromptQuestion () {
 SC.WriteLine("question");
-string question = Console.ReadLine();
+
 switch ((string)(question)) {
     case (string)"1": {
         SC.WriteLine("Vilken känd regissör gjorde filmen 'The Shining'?");
