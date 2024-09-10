@@ -5,6 +5,8 @@ using System.Runtime.CompilerServices;
 using System.ComponentModel;
 using Quiz;
 using MQuiz;
+using System.Linq.Expressions;
+using System.Diagnostics;
 
 
 CGame MyGame = new CGame();
@@ -13,19 +15,41 @@ CQuestions MyQuestions = new CQuestions();
 
 
 
-while (true) {
-MyGame.ShowMenue(); // Meny där du kan välja saker
-MyQuestions.AddQuestion(); // Välja att läga till fråga / Editerara existerande frågor
-MyGame.StartGame(); // Starta spelet
+while /* MAIN */ (true) {
 
+while (MyGame.GameRun == false){
+    SC.Clear();
+MyGame.ShowMenue(); // Meny där du kan välja saker
+MyGame.MenueChoice = SC.ReadLine();
+
+switch ((string)(MyGame.MenueChoice)) {
+    case (string) "1": {
+        MyGame.ChoceName();
+    break;    }
+    case (string) "2": {
+        MyQuestions.AddQuestion(); // Välja att läga till fråga / Editerara existerande frågor
+    break;    }
+    case (string) "3": {
+        MyGame.StartGame(); // Starta spelet
+    break;    }
+
+}
+
+
+} // while Menue
+
+while (MyGame.GameRun == true) {
+    SC.Clear();
 MyQuestions.ChosingQuestion(); // Välja vilken fråga man vill besvara 
 MyQuestions.PromptQuestion(); // skriva utt frågan på skärmen
 MyQuestions.ReadAnswer(); // Läsa in svaret 
-MyQuestions.PromptAnswer(); // Skriva svaret och ge poäng
+MyQuestions.PromptAnswer(); // Skriva rätta svaret och ge poäng
 
+if (MyGame.AllAnswerd ==  true) {
 MyGame.ShowResult(); // visas i sluttet med antal rätt och poäng
 MyGame.EndGame(); // sätter allt till orginal och återgår till Menyn
-
+} // if 
+}
 
 
 
