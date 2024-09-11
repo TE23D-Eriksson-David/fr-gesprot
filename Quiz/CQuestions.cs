@@ -1,21 +1,63 @@
 using System.Diagnostics;
+using System.Security.Cryptography;
+using Quiz;
 using SC = System.Console;
 
 namespace MQuiz{
 
 public class CQuestions
 {
+bool AddQuestions;
+public int ADQusetions = 0;
+string question = "0";
+string Answer = "0";
+string Question1 = "Question slot 1 (max char length 60)";
+string Question2 = "Question slot 2 (max char length 60)";
+string WADQuestion = "0";
+public void ReadAnswer() {
+Answer = SC.ReadLine();
+}
+public void AddQuestion() {
+    while (AddQuestions == true) {
+SC.Clear();
+SC.WriteLine(@$"Write the number for your chossen action.
 
-string question;
+    ##########################################################
+    #--------------------------------------------------------#
+    #   1. {Question1}                                          
+    #--------------------------------------------------------#
+    #   2. {Question2}                                          
+    #------------------------------------------------------- #
+    ####################################W#####################
+    Chose question slot or press Esc to go back to the Menue.
 
+");
+WADQuestion = SC.ReadLine();
+if (ADQusetions == 2) {
+    ADQusetions --;
+}
+//if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))  {AddQuestions = false;}
 
+switch ((string)(WADQuestion)) {
+    case (string)"1": {
+        SC.Clear();
+        SC.WriteLine(Question1);
+        Question1 = SC.ReadLine();
+        ADQusetions ++;
+    break;    }
 
-public void ReadAnswer() {}
-public void AddQuestion() {}
+    case (string)"2": {
+        SC.Clear();
+        SC.WriteLine(Question2);
+        Question2 = SC.ReadLine();
+        ADQusetions ++;
+    break;    }
+}
+    }
+}
 
 public void PromptAnswer() {
 SC.WriteLine("Answer");
-string Answer = SC.ReadLine();
 
 SC.WriteLine("PromptAnswer");
 
@@ -65,8 +107,19 @@ SC.WriteLine("PromptAnswer");
 
 
 public void ChosingQuestion() {   
-
-SC.WriteLine("ChosingQuestion");
+//SC.WriteLine("ChosingQuestion");
+SC.WriteLine("Write the number for your chossen Catagory or press Esc to go back to the Menue.");
+SC.WriteLine(@$"
+    ##############################################
+    #--------------------------------------------#
+    #  (1) Film      |  50   |   100   |  150  | #
+    #--------------------------------------------#
+    #  (2) Geogrefy  |  50   |   100   |  150  | #
+    #--------------------------------------------#
+    #  (3) Music     |  50   |   100   |  150  | #
+    #--------------------------------------------#
+    ##############################################
+    "); 
 question = Console.ReadLine();
 
  }
