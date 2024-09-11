@@ -13,6 +13,10 @@ string question = "0";
 string Answer = "0";
 string Question1 = "Question slot 1 (max char length 60)";
 string Question2 = "Question slot 2 (max char length 60)";
+string Question1Head = "Question catagory";
+string Question2Head = "Question catagory";
+string Question1Answer = "Question Answer";
+string Question2Answer = "Question Answer";
 string WADQuestion = "0";
 public void ReadAnswer() {
 Answer = SC.ReadLine();
@@ -24,15 +28,16 @@ SC.WriteLine(@$"Write the number for your chossen action.
 
     ##########################################################
     #--------------------------------------------------------#
-    #   1. {Question1}                                          
+    #   1. {Question1Head} : {Question1} : {Question1Answer}                                          
     #--------------------------------------------------------#
-    #   2. {Question2}                                          
+    #   2. {Question2Head} : {Question2} : {Question2Answer}                                          
     #------------------------------------------------------- #
-    ####################################W#####################
+    ##########################################################
     Chose question slot or press Esc to go back to the Menue.
 
 ");
 WADQuestion = SC.ReadLine();
+
 if (ADQusetions == 2) {
     ADQusetions --;
 }
@@ -43,6 +48,8 @@ switch ((string)(WADQuestion)) {
         SC.Clear();
         SC.WriteLine(Question1);
         Question1 = SC.ReadLine();
+        Question1Answer = SC.ReadLine();
+        Question1Head = SC.ReadLine();
         ADQusetions ++;
     break;    }
 
@@ -50,6 +57,8 @@ switch ((string)(WADQuestion)) {
         SC.Clear();
         SC.WriteLine(Question2);
         Question2 = SC.ReadLine();
+        Question2Answer = SC.ReadLine();
+        Question2Head = SC.ReadLine();
         ADQusetions ++;
     break;    }
 }
@@ -119,7 +128,18 @@ SC.WriteLine(@$"
     #  (3) Music     |  50   |   100   |  150  | #
     #--------------------------------------------#
     ##############################################
-    "); 
+    ");
+    if (ADQusetions > 0) {SC.WriteLine(@$"
+    ##########################################################
+    #--------------------------------------------------------#
+    #  (4) {Question1}                                          
+    #--------------------------------------------------------#
+    #  (5) {Question2}                                          
+    #------------------------------------------------------- #
+    ####################################W#####################
+    
+    ");} 
+
 question = Console.ReadLine();
 
  }
