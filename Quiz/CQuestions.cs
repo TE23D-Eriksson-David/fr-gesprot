@@ -9,6 +9,7 @@ public class CQuestions
 {
 bool AddQuestions = true;
 public int ADQusetions = 0;
+public int AnsQuestions = 0;
 string question = "0";
 string Answer = "0";
 string Question1 = "Question slot 1 (max char length 60)";

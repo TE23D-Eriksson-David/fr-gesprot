@@ -12,7 +12,11 @@ public string MenueChoice = "";
 string PlayerName = "player";
 
 
-
+public void Check() {
+ //   if (MyQuestions.AnsQuestions == 9 += MyQuestions.ADQusetions) {
+ //       AllAnswerd = true;
+ //   }
+}
 public void ChoceName() {
 SC.Clear();
 SC.WriteLine(@"Write the name that you want to have:

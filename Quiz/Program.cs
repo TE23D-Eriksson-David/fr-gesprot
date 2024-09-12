@@ -43,14 +43,16 @@ switch ((string)(MyGame.MenueChoice)) {
 while (MyGame.GameRun == true) {
     SC.Clear();
 MyQuestions.ChosingQuestion(); // Välja vilken fråga man vill besvara 
+MyQuestions.AnsQuestions ++;
 MyQuestions.PromptQuestion(); // skriva utt frågan på skärmen
 MyQuestions.ReadAnswer(); // Läsa in svaret 
 MyQuestions.PromptAnswer(); // Skriva rätta svaret och ge poäng
+MyGame.Check();
 
 if (MyGame.AllAnswerd ==  true) {
 MyGame.ShowResult(); // visas i sluttet med antal rätt och poäng
 MyGame.EndGame(); // sätter allt till orginal och återgår till Menyn
-} // if 
+}  
 }
 
 
