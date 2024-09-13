@@ -48,6 +48,9 @@ MyQuestions.PromptAnswer(); // Skriva rätta svaret och ge poäng
 MyQuestions.Check();
 
 if (MyQuestions.AllAnswerd ==  true) {
+MyQuestions.ADQusetions = MyGame.ADQGusetions;
+MyGame.CorectAnswers = MyQuestions.CorectQuestions;
+MyGame.Points = MyQuestions.QuestionPoints;
 MyGame.ShowResult(); // visas i sluttet med antal rätt och poäng
 MyGame.EndGame(); // sätter allt till orginal och återgår till Menyn
 }  

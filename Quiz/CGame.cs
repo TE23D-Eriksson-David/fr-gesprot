@@ -4,12 +4,12 @@ namespace Quiz{
 
 public class CGame
 {
-int CorectAnswers = 0;
-int Points = 0;
+public int CorectAnswers = 0;
+public int Points = 0;
 public bool GameRun = false;
 public string MenueChoice = "";
 string PlayerName = "player";
-
+public int ADQGusetions = 0;
 
 
 public void ChoceName() {
@@ -27,13 +27,13 @@ public void ShowMenue () {
     #                               #
     #   1. Chose player name:       #   Name: {PlayerName} 
     #                               #
-    #   2. Add Question:            #   Added questions
+    #   2. Add Question:            #   {ADQGusetions} Added questions
     #                               #
     #   3. Start Game:              #
     #                               #
     #################################
 
-   ");  /* ({MyQuestions.ADQusetions}) */
+   ");  
 } 
 
 public void StartGame() {
@@ -45,9 +45,10 @@ public void StartGame() {
 
 public void ShowResult() {
     
-    SC.WriteLine($@" {CorectAnswers} , {Points}"); //Points & CorectAnsers
+    SC.WriteLine($@" You got {CorectAnswers} Answers Corect, and a score of {Points} 
+    Well done!"); 
+    SC.ReadLine(); 
     
-    //SC.WriteLine ($"{Points},{CorrectAnswer}");
 }
     
 } // Class END

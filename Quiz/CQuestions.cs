@@ -11,10 +11,13 @@ public bool AllAnswerd = false;
 bool AddQuestions = true;
 public int ADQusetions = 0;
 public int AnsQuestions = 0;
+public int  intefall= 0;
+public int QuestionPoints= 0;
+public int CorectQuestions =0;
 string question = "0";
 string Answer = "0";
-string Question1 = "Question slot 1 (max char length 60)";
-string Question2 = "Question slot 2 (max char length 60)";
+string Question1 = "Question slot 1 ";
+string Question2 = "Question slot 2 ";
 string Question1Head = "Question catagory";
 string Question2Head = "Question catagory";
 string Question1Answer = "Question Answer";
@@ -80,60 +83,76 @@ Answer = SC.ReadLine();
 }
 public void PromptAnswer() {
 SC.WriteLine("Answer");
-
+AnsQuestions ++;
 SC.WriteLine("PromptAnswer");
 
     switch ((string)(Answer)) {
     case (string)"Stanley Kubrick": {
         SC.WriteLine("Correct answer, you recive 50 points");
-        
+        QuestionPoints =+ 50;
+        CorectQuestions++;
     break;    }
 
     case (string)"Top Gun": {
         SC.WriteLine("Correct answer, you recive 100 points");
-        
+        QuestionPoints =+ 100;
+        CorectQuestions++;
     break;    }
 
     case (string)"Springfield": {
         SC.WriteLine("Correct answer, you recive 150 points");
-        
+        QuestionPoints =+ 150;
+        CorectQuestions++;
     break;    }
     
     case (string)"Victoriasjön": {
         SC.WriteLine("Correct answer, you recive 50 points");
-        
+        QuestionPoints =+ 50;
+        CorectQuestions++;
     break;    }
     case (string)"Vatikanstaten": {
         SC.WriteLine("Correct answer, you recive 100 points");
-        
+        QuestionPoints =+ 100;
+        CorectQuestions++;
     break;    }
     case (string)"Canberra": {
         SC.WriteLine("Correct answer, you recive 150 points");
-        
+        QuestionPoints =+ 150;
+        CorectQuestions++;
     break;    }
     case (string)"John Lennon": {
         SC.WriteLine("Correct answer, you recive 50 points");
-        
+        QuestionPoints =+ 50;
+        CorectQuestions++;
     break;    }
     case (string)"Irland": {
         SC.WriteLine("Correct answer, you recive 100 points");
-        
+        QuestionPoints =+ 100;
+        CorectQuestions++;
     break;    }
     case (string)"1977": {
         SC.WriteLine("Correct answer, you recive 150 points");
-        
+        QuestionPoints =+ 150;
+        CorectQuestions++;
     break;    }
 }
 if (Question1Answer == Answer) {
     SC.WriteLine(Question1Answer);
         SC.WriteLine("Correct answer, you recive what ever you want for answering YOUR own question");
+        intefall ++;
+        CorectQuestions++;
 }
 if (Question2Answer == Answer) {
     SC.WriteLine(Question2Answer);
         SC.WriteLine("Correct answer, you recive what ever you want for answering YOUR own question");
+         intefall ++;
+         CorectQuestions++;
 }
-SC.WriteLine("Wrong Answer, No points for you!"); // Problem om man svarar rätt på sin egen fråga så säger
-SC.ReadLine(); // den endå att du har fell. 
+if ( intefall == 0) {
+SC.WriteLine("Wrong Answer, No points for you!"); 
+}
+SC.ReadLine();  
+ intefall = 0;
 }
 
 
@@ -238,10 +257,13 @@ switch ((string)(question)) {
 } // Promt Question
 
 public void Check() {
-   
-    if (AnsQuestions == 9 /*+= ADQusetions*/) { // Problem !!!!!!!
+   if (ADQusetions == 2) {
+    if (AnsQuestions == 11) {
+        AllAnswerd = true;}
+   } else { if (AnsQuestions == 9) {
         AllAnswerd = true;
     }
+   }
 }
 
 
