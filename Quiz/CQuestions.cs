@@ -153,6 +153,7 @@ SC.WriteLine("Wrong Answer, No points for you!");
 }
 SC.ReadLine();  
  intefall = 0;
+ Answer = "";
 }
 
 
