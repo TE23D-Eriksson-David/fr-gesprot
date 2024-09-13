@@ -7,6 +7,7 @@ namespace MQuiz{
 
 public class CQuestions
 {
+public bool AllAnswerd = false;
 bool AddQuestions = true;
 public int ADQusetions = 0;
 public int AnsQuestions = 0;
@@ -122,18 +123,17 @@ SC.WriteLine("PromptAnswer");
         SC.WriteLine("Correct answer, you recive 150 points");
         
     break;    }
-    case (string)"11": {
-        SC.WriteLine(Question1Answer);
-        SC.WriteLine("Correct answer, you recive what ever you want for answering your own question");
-    break;    }
-    case (string) "Question2Answer": {
-        SC.WriteLine(Question2Answer);
-        SC.WriteLine("Correct answer, you recive what ever you want for answering your own question");
-    break;    }
-    
 }
-SC.WriteLine("Wrong Answer, No points for you!");
-SC.ReadLine();
+if (Question1Answer == Answer) {
+    SC.WriteLine(Question1Answer);
+        SC.WriteLine("Correct answer, you recive what ever you want for answering YOUR own question");
+}
+if (Question2Answer == Answer) {
+    SC.WriteLine(Question2Answer);
+        SC.WriteLine("Correct answer, you recive what ever you want for answering YOUR own question");
+}
+SC.WriteLine("Wrong Answer, No points for you!"); // Problem om man svarar rätt på sin egen fråga så säger
+SC.ReadLine(); // den endå att du har fell. 
 }
 
 
@@ -236,6 +236,13 @@ switch ((string)(question)) {
 
 
 } // Promt Question
+
+public void Check() {
+   
+    if (AnsQuestions == 9 /*+= ADQusetions*/) { // Problem !!!!!!!
+        AllAnswerd = true;
+    }
+}
 
 
 }// Class End 

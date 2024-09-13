@@ -15,8 +15,6 @@ CQuestions MyQuestions = new CQuestions();
 
 
 
-
-
 while /* MAIN */ (true) {
 while (MyGame.GameRun == false){
     SC.Clear();
@@ -47,13 +45,14 @@ MyQuestions.AnsQuestions ++;
 MyQuestions.PromptQuestion(); // skriva utt frågan på skärmen
 MyQuestions.ReadAnswer(); // Läsa in svaret 
 MyQuestions.PromptAnswer(); // Skriva rätta svaret och ge poäng
-MyGame.Check();
+MyQuestions.Check();
 
-if (MyGame.AllAnswerd ==  true) {
+if (MyQuestions.AllAnswerd ==  true) {
 MyGame.ShowResult(); // visas i sluttet med antal rätt och poäng
 MyGame.EndGame(); // sätter allt till orginal och återgår till Menyn
 }  
 }
+
 
 
 

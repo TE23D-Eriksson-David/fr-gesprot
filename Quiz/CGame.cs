@@ -7,16 +7,11 @@ public class CGame
 int CorectAnswers = 0;
 int Points = 0;
 public bool GameRun = false;
-public bool AllAnswerd = false;
 public string MenueChoice = "";
 string PlayerName = "player";
 
 
-public void Check() {
- //   if (MyQuestions.AnsQuestions == 9 += MyQuestions.ADQusetions) {
- //       AllAnswerd = true;
- //   }
-}
+
 public void ChoceName() {
 SC.Clear();
 SC.WriteLine(@"Write the name that you want to have:
