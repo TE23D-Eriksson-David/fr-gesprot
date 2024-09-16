@@ -66,7 +66,7 @@ switch ((string)(WADQuestion)) {
         Question1 = SC.ReadLine();
         SC.WriteLine(@"Write question answer
         ");
-        Question1Answer = SC.ReadLine();
+        Question1Answer = SC.ReadLine().ToLower();
         SC.WriteLine(@"Write question head
         ");
         Question1Head = SC.ReadLine();
@@ -83,7 +83,7 @@ switch ((string)(WADQuestion)) {
         Question2 = SC.ReadLine();
         SC.WriteLine(@"Write question answer
         ");
-        Question2Answer = SC.ReadLine();
+        Question2Answer = SC.ReadLine().ToLower();
         SC.WriteLine(@"Write question head
         ");
         Question2Head = SC.ReadLine();
@@ -97,57 +97,56 @@ WADQuestion = "";
 }
 
 public void ReadAnswer() {
-Answer = SC.ReadLine();
+Answer = SC.ReadLine().ToLower();
 }
 public void PromptAnswer() {
-AnsQuestions ++;
     switch ((string)(Answer)) {
-    case (string)"Stanley Kubrick": {
+    case (string)"stanley kubrick": {
 SC.WriteLine("Correct answer, you recive 50 points");
         QuestionPoints =+ 50;
         intefall = 1;
         CorectQuestions++;
     break;    }
 
-    case (string)"Top Gun": {
+    case (string)"top gun": {
 SC.WriteLine("Correct answer, you recive 100 points");
         QuestionPoints =+ 100;
         intefall = 1;
         CorectQuestions++;
     break;    }
 
-    case (string)"Springfield": {
+    case (string)"springfield": {
 SC.WriteLine("Correct answer, you recive 150 points");
         QuestionPoints =+ 150;
         intefall = 1;
         CorectQuestions++;
     break;    }
     
-    case (string)"Victoriasjön": {
+    case (string)"victoriasjön": {
 SC.WriteLine("Correct answer, you recive 50 points");
         QuestionPoints =+ 50;
         intefall = 1;
         CorectQuestions++;
     break;    }
-    case (string)"Vatikanstaten": {
+    case (string)"vatikanstaten": {
 SC.WriteLine("Correct answer, you recive 100 points");
         QuestionPoints =+ 100;
         intefall = 1;
         CorectQuestions++;
     break;    }
-    case (string)"Canberra": {
+    case (string)"canberra": {
 SC.WriteLine("Correct answer, you recive 150 points");
         QuestionPoints =+ 150;
         intefall = 1;
         CorectQuestions++;
     break;    }
-    case (string)"John Lennon": {
+    case (string)"john lennon": {
 SC.WriteLine("Correct answer, you recive 50 points");
         QuestionPoints =+ 50;
         intefall = 1;
         CorectQuestions++;
     break;    }
-    case (string)"Irland": {
+    case (string)"irland": {
 SC.WriteLine(@"Correct answer, you recive 100 points");
         QuestionPoints =+ 100;
         intefall = 1;
@@ -161,13 +160,13 @@ SC.WriteLine(@"Correct answer, you recive 150 points");
     break;    }
 }
 if (Question1Answer == Answer) {
-    SC.WriteLine(Question1Answer);
+    //SC.WriteLine(Question1Answer);
 SC.WriteLine("Correct answer, you recive what ever you want for answering YOUR own question");
         CorectQuestions++;
         intefall = 1;
 }
 if (Question2Answer == Answer) {
-    SC.WriteLine(Question2Answer);
+    //SC.WriteLine(Question2Answer);
 SC.WriteLine("Correct answer, you recive what ever you want for answering YOUR own question");
          CorectQuestions++;
          intefall = 1;
@@ -184,6 +183,7 @@ SC.ReadLine();
 
 public void ChosingQuestion() {   
 //SC.WriteLine("ChosingQuestion");
+SC.WriteLine(AnsQuestions);
 SC.WriteLine("Write the number for your chossen Catagory or press Esc to go back to the Menue.");
 SC.WriteLine(@$"
     ####################################################
@@ -212,76 +212,65 @@ SC.WriteLine(@$"
 
 
 public void PromptQuestion () {
-
+SC.Clear();
+SC.WriteLine(@"Write the Anser to the question:
+");
 switch ((string)(question)) {
     
     case (string)"1": {
         intefall = 2;
-        SC.Clear();
         SC.WriteLine("Vilken känd regissör gjorde filmen 'The Shining'?");
     break;    }
 
     case (string)"2": {
         intefall = 2;
-         SC.Clear();
         SC.WriteLine(@"Från vilken film är följande citat hämtat?
-
 I feel the need...the need for speed!");
     break;    }
 
     case (string)"3": {
         intefall = 2;
-        SC.Clear();
         SC.WriteLine("Vad heter den fiktiva staden där TV-serien 'The Simpsons' utspelar sig?");
     break;    }
     
     case (string)"4": {
         intefall = 2;
-        SC.Clear();
         SC.WriteLine("Vilken är den största sjön i Afrika?");
     break;    }
 
     case (string)"5": {
         intefall = 2;
-        SC.Clear();
         SC.WriteLine("Vilket land är världens minsta till ytan?");
     break;    }
 
     case (string)"6": {
         intefall = 2;
-        SC.Clear();
         SC.WriteLine("Vad heter huvudstaden i Australien?");
     break;    }
 
     case (string)"7": {
         intefall = 2;
-         SC.Clear();
         SC.WriteLine(@"Måndagen den 8 december 1980 i New York sköts en man till döds av den förvirrade beundraren Mark Chapman. 
-
 Vem var det som mördades?");
     break;    }
 
     case (string)"8": {
         intefall = 2;
-        SC.Clear();
         SC.WriteLine(@"Från vilket land kommer rockgruppen U2?");
     break;    }
 
     case (string)"9": {
         intefall = 2;
-        SC.Clear();
         SC.WriteLine("Vilket år dog Elvis Presley?");
     break;    }
 
     case (string)"11": {
         intefall = 2;
-        SC.Clear();
         SC.WriteLine(Question1);
     break;    }
 
     case (string)"12": {
         intefall = 2;
-        SC.Clear();
         SC.WriteLine(Question2);
     break;    }
 
@@ -308,6 +297,8 @@ public void Check() {
 
 
 
+// Fix, so that questions arent acesible after you chose them!!
+// fix escape
 
 /*
 if (Console.KeyAvailable)

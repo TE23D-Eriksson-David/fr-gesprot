@@ -44,9 +44,9 @@ public void StartGame() {
 }
 
 public void ShowResult() {
-    
-    SC.WriteLine($@" You got {CorectAnswers} Answers Corect, and a score of {Points} 
-    Well done!"); 
+    SC.Clear();
+SC.WriteLine($@" You got {CorectAnswers} Answers Corect, and a score of {Points} 
+Well done!"); 
     SC.ReadLine(); 
     
 }
