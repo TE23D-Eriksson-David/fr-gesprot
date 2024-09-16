@@ -7,6 +7,7 @@ using Quiz;
 using MQuiz;
 using System.Linq.Expressions;
 using System.Diagnostics;
+using System.Threading;
 
 
 CGame MyGame = new CGame();
@@ -17,6 +18,8 @@ CQuestions MyQuestions = new CQuestions();
 
 while /* MAIN */ (true) {
 while (MyGame.GameRun == false){
+MyGame.ADGQusetions = MyQuestions.ADQusetions;
+MyQuestions.AddQuestions = true;
     SC.Clear();
 SC.WriteLine("Write the number for your chossen action.");
 MyGame.ShowMenue(); // Meny där du kan välja saker
@@ -48,9 +51,8 @@ MyQuestions.PromptAnswer(); // Skriva rätta svaret och ge poäng
 MyQuestions.Check();
 
 if (MyQuestions.AllAnswerd ==  true) {
-MyQuestions.ADQusetions = MyGame.ADQGusetions;
-MyGame.CorectAnswers = MyQuestions.CorectQuestions;
-MyGame.Points = MyQuestions.QuestionPoints;
+MyQuestions.CorectQuestions = MyGame.CorectAnswers;
+MyQuestions.QuestionPoints = MyGame.Points;
 MyGame.ShowResult(); // visas i sluttet med antal rätt och poäng
 MyGame.EndGame(); // sätter allt till orginal och återgår till Menyn
 }  

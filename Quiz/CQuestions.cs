@@ -8,7 +8,9 @@ namespace MQuiz{
 public class CQuestions
 {
 public bool AllAnswerd = false;
-bool AddQuestions = true;
+bool question1activ = false;
+bool question2activ = false;
+public bool AddQuestions = true;
 public int ADQusetions = 0;
 public int AnsQuestions = 0;
 public int  intefall= 0;
@@ -40,11 +42,20 @@ SC.WriteLine(@$"Write the number for your chossen action.
 
 ");
 WADQuestion = SC.ReadLine();
+//   if (Console.KeyAvailable) {
+ConsoleKeyInfo keyInfo = SC.ReadKey(true);
 
-if (ADQusetions == 2) {
+                if (keyInfo.Key == ConsoleKey.Escape)
+                {
+                   // ShowMenue ();
+                   AddQuestions = false;
+                 //  break;
+                }
+            //} 
+if (ADQusetions == 3) {
     ADQusetions --;
 }
-//if (Raylib.IsKeyDown(KeyboardKey.KEY_LEFT))  {AddQuestions = false;}
+
 
 switch ((string)(WADQuestion)) {
     case (string)"1": {
@@ -53,12 +64,15 @@ switch ((string)(WADQuestion)) {
         SC.WriteLine(@"Write your question:
         ");
         Question1 = SC.ReadLine();
-        SC.WriteLine("Write question answer");
+        SC.WriteLine(@"Write question answer
+        ");
         Question1Answer = SC.ReadLine();
-        SC.WriteLine("Write question head");
+        SC.WriteLine(@"Write question head
+        ");
         Question1Head = SC.ReadLine();
         SC.WriteLine("done");
-        ADQusetions ++;
+        ADQusetions =+ 1;
+        question1activ = true;
     break;    }
 
     case (string)"2": {
@@ -67,14 +81,18 @@ switch ((string)(WADQuestion)) {
         SC.WriteLine(@"Write your question:
         ");
         Question2 = SC.ReadLine();
-        SC.WriteLine("Write question answer");
+        SC.WriteLine(@"Write question answer
+        ");
         Question2Answer = SC.ReadLine();
-        SC.WriteLine("Write question head");
+        SC.WriteLine(@"Write question head
+        ");
         Question2Head = SC.ReadLine();
         SC.WriteLine("done");
-        ADQusetions ++;
+        ADQusetions =+ 1;
+        question2activ = true;
     break;    }
 }
+WADQuestion = "";
     }
 }
 
@@ -169,27 +187,24 @@ SC.WriteLine(@$"
     #--------------------------------------------------#
     #   Music     | (7) 50  | (8)  100   | (9) 150  |  #
     #--------------------------------------------------#
-    ####################################################
-    ");
-    if (ADQusetions > 0) {SC.WriteLine(@$"
+    ####################################################");
+    if (question1activ == true) {SC.WriteLine(@$"
     ##########################################################
     #--------------------------------------------------------#
     #  (11) {Question1Head}    
     #--------------------------------------------------------#                                      
-    ##########################################################");} 
-    if (ADQusetions > 0) {SC.WriteLine(@$"
+    ##########################################################");} if (question2activ == true) {SC.WriteLine(@$"
     ##########################################################
     #--------------------------------------------------------#
     #  (12) {Question2Head}                                          
     #------------------------------------------------------- #
     ##########################################################");} 
-question = Console.ReadLine();
+
  }
 
 
 
 public void PromptQuestion () {
-SC.WriteLine("question");
 
 switch ((string)(question)) {
     
@@ -271,3 +286,19 @@ public void Check() {
 }// Class End 
 
 } // Namespace END
+
+
+
+
+
+/*
+if (Console.KeyAvailable)
+            {
+                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+
+                if (keyInfo.Key == ConsoleKey.Escape)
+                {
+                    ShowMenue ();
+                }
+            }
+*/

@@ -9,7 +9,7 @@ public int Points = 0;
 public bool GameRun = false;
 public string MenueChoice = "";
 string PlayerName = "player";
-public int ADQGusetions = 0;
+public int ADGQusetions;
 
 
 public void ChoceName() {
@@ -27,7 +27,7 @@ public void ShowMenue () {
     #                               #
     #   1. Chose player name:       #   Name: {PlayerName} 
     #                               #
-    #   2. Add Question:            #   {ADQGusetions} Added questions
+    #   2. Add Question:            #   {ADGQusetions} Added question
     #                               #
     #   3. Start Game:              #
     #                               #
@@ -54,3 +54,6 @@ public void ShowResult() {
 } // Class END
 
 } // Namespace END
+
+
+
